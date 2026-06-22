@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "localtask": {
+      "command": "/ABSOLUTE/PATH/TO/localTask/scripts/mcp.sh",
+      "args": [],
+      "env": {}
+    }
+  }
+}

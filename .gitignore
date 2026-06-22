@@ -1,0 +1,8 @@
+node_modules/
+data/
+.env
+*.log
+.DS_Store
+
+# マシン固有の絶対パスを含むため除外（.mcp.json.example を参照）
+.mcp.json

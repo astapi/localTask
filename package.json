@@ -1,0 +1,33 @@
+{
+  "name": "localtask",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Notionと一方向同期するローカルタスク管理ツール（CLI + MCPサーバー）",
+  "bin": {
+    "localtask": "./src/cli.ts"
+  },
+  "scripts": {
+    "localtask": "tsx src/cli.ts",
+    "ui": "tsx src/cli.ts ui",
+    "sync": "tsx src/cli.ts sync",
+    "list": "tsx src/cli.ts list",
+    "summary": "tsx src/cli.ts summary",
+    "tick": "tsx src/cli.ts tick",
+    "mcp": "tsx src/mcp-server.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.4",
+    "@notionhq/client": "^5.22.0",
+    "better-sqlite3": "^11.7.0",
+    "dotenv": "^16.4.7",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.12",
+    "@types/node": "^22.10.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}
