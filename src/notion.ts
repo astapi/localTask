@@ -119,6 +119,17 @@ function renderBlock(b: any, depth: number): string | null {
       return `${indent}\`\`\`\n${indent}${rt}\n${indent}\`\`\``;
     case "divider":
       return `${indent}---`;
+    case "image": {
+      // 画像はローカルに落とさず、キャプションとURLを1行のテキストとして残す。
+      // アップロード画像(file)のURLは署名付きで約1時間で失効する点に注意。
+      const img = b.image ?? {};
+      const url = img.external?.url ?? img.file?.url ?? "";
+      const caption: string = (img.caption ?? [])
+        .map((r: any) => r.plain_text ?? "")
+        .join("")
+        .trim();
+      return `${indent}🖼 ${caption || "image"}${url ? ` — ${url}` : ""}`;
+    }
     case "paragraph":
       return rt ? `${indent}${rt}` : "";
     default:
